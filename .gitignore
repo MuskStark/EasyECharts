@@ -38,3 +38,4 @@ build/
 .DS_Store
 /.idea/git_toolbox_prj.xml
 /.idea/vcs.xml
+/.idea/aws.xml
