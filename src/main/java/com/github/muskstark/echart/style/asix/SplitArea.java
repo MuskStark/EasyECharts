@@ -1,6 +1,7 @@
 package com.github.muskstark.echart.style.asix;
 
-import icu.topbanker.echarts.style.area.AreaStyle;
+
+import com.github.muskstark.echart.style.area.AreaStyle;
 import lombok.Data;
 
 /**

@@ -1,6 +1,7 @@
 package com.github.muskstark.echart.style.asix;
 
-import icu.topbanker.echarts.style.line.LineStyle;
+
+import com.github.muskstark.echart.style.line.LineStyle;
 import lombok.Data;
 
 /**

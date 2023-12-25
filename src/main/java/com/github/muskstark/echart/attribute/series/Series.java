@@ -1,7 +1,8 @@
 package com.github.muskstark.echart.attribute.series;
 
-import icu.topbanker.echarts.style.background.BackgroundStyle;
-import icu.topbanker.echarts.style.label.Label;
+
+import com.github.muskstark.echart.style.background.BackgroundStyle;
+import com.github.muskstark.echart.style.label.Label;
 import lombok.Getter;
 
 import java.util.List;

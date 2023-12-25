@@ -1,7 +1,8 @@
 package com.github.muskstark.echart.style.asix;
 
 
-import icu.topbanker.echarts.style.rich.Rich;
+
+import com.github.muskstark.echart.style.rich.Rich;
 import lombok.Data;
 
 import java.awt.*;
