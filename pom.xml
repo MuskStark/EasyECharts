@@ -6,7 +6,37 @@
 
     <groupId>com.github.muskstark</groupId>
     <artifactId>easyecharts</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-bate</version>
+    <url>https://github.com/MuskStark/EasyECharts</url>
+    <description>A Java Tool For ECharts</description>
+
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License Version 3</name>
+            <url>http://www.gnu.org/licenses/lgpl.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <tag>main</tag>
+        <url>https://github.com/MuskStark/EasyECharts</url>
+        <connection>scm:git:https://github.com/MuskStark/EasyECharts.git</connection>
+        <developerConnection>scm:git:https://github.com/MuskStark/EasyECharts.git</developerConnection>
+    </scm>
+
+    <organization>
+        <name>EasyECharts</name>
+        <url>https://github.com/MuskStark/EasyECharts</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>PhoebeJ</name>
+            <email>gitman@outlook.sg</email>
+            <organization>EasyECharts</organization>
+        </developer>
+    </developers>
 
     <dependencies>
         <dependency>
@@ -34,5 +64,36 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
