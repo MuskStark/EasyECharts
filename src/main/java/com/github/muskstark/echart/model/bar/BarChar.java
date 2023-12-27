@@ -3,6 +3,7 @@ package com.github.muskstark.echart.model.bar;
 
 import com.alibaba.fastjson2.annotation.JSONField;
 import com.github.muskstark.echart.attribute.Title;
+import com.github.muskstark.echart.attribute.ToolTip;
 import com.github.muskstark.echart.attribute.axis.XAxis;
 import com.github.muskstark.echart.attribute.axis.YAxis;
 import com.github.muskstark.echart.attribute.series.BarSeries;
@@ -24,20 +25,18 @@ public class BarChar extends Charts {
     private XAxis xAxis;
     @JSONField(name = "yAxis")
     private YAxis yAxis;
+    private ToolTip toolTip;
     private List<BarSeries> series;
 
     @Override
     public void initialize(TypeOfChart chartType) {
         // initialize bar
-        Title title = new Title();
-        XAxis xAxis = new XAxis();
-        YAxis yAxis = new YAxis();
         BarSeries series = new BarSeries();
-        this.setTitle(title);
-        this.setXAxis(xAxis);
-        this.setYAxis(yAxis);
-        this.setSeries(new ArrayList<BarSeries>());
         series.type(chartType.getType());
+        this.setTitle(new Title());
+        this.setXAxis(new XAxis());
+        this.setYAxis(new YAxis());
+        this.setSeries(new ArrayList<BarSeries>());
         this.addSeries(series);
         if(Objects.equals(chartType.getKindOfChart(), TypeOfChart.BAR_CHART_BASE.getKindOfChart())) {
             this.defineXAxis().type("category");
@@ -50,11 +49,18 @@ public class BarChar extends Charts {
     }
 
     public XAxis defineXAxis() {
-        return this.xAxis;
+        return this.getXAxis();
     }
 
     public YAxis defineYAxis() {
-        return this.yAxis;
+        return this.getYAxis();
+    }
+
+    public ToolTip defineToolTip() {
+        if (this.getToolTip() == null) {
+            this.setToolTip(new ToolTip());
+        }
+        return this.getToolTip();
     }
 
     public BarSeries defineDefaultSeries() {
