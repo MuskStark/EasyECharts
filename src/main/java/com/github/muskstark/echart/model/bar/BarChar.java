@@ -6,12 +6,15 @@ import com.github.muskstark.echart.attribute.Title;
 import com.github.muskstark.echart.attribute.axis.XAxis;
 import com.github.muskstark.echart.attribute.axis.YAxis;
 import com.github.muskstark.echart.attribute.series.BarSeries;
+import com.github.muskstark.echart.enums.TypeOfChart;
 import com.github.muskstark.echart.model.Charts;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -24,15 +27,22 @@ public class BarChar extends Charts {
     private List<BarSeries> series;
 
     @Override
-    public void initialize(String type) {
+    public void initialize(TypeOfChart chartType) {
+        // initialize bar
         Title title = new Title();
         XAxis xAxis = new XAxis();
         YAxis yAxis = new YAxis();
-        title.show(false);
+        BarSeries series = new BarSeries();
         this.setTitle(title);
         this.setXAxis(xAxis);
         this.setYAxis(yAxis);
         this.setSeries(new ArrayList<BarSeries>());
+        series.type(chartType.getType());
+        this.addSeries(series);
+        if(Objects.equals(chartType.getKindOfChart(), TypeOfChart.BAR_CHART_BASE.getKindOfChart())) {
+            this.defineXAxis().type("category");
+            this.defineYAxis().type("value");
+        }
     }
 
     public Title defineTitle() {
@@ -47,7 +57,11 @@ public class BarChar extends Charts {
         return this.yAxis;
     }
 
-    public void defineSeries(BarSeries series) {
-        this.series.add(series);
+    public BarSeries defineDefaultSeries() {
+        return this.getSeries().get(0);
+    }
+
+    public void addSeries(BarSeries series) {
+        this.getSeries().add(series);
     }
 }

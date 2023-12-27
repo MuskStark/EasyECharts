@@ -6,9 +6,9 @@ import com.github.muskstark.echart.model.bar.BarChar;
 
 public class BarChartFactory implements EchartsFactory{
     @Override
-    public BarChar createChart() {
+    public BarChar createChart(TypeOfChart chartType) {
         BarChar barCharBase = new BarChar();
-        barCharBase.initialize(TypeOfChart.BAR_CHART.getType());
+        barCharBase.initialize(chartType);
         return barCharBase;
     }
 }

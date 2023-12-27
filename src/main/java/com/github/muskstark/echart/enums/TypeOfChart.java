@@ -10,12 +10,17 @@ public enum TypeOfChart {
     /**
      * 基础类图表
      */
-    BAR_CHART("bar");
+    BAR_CHART("bar",null),
+    BAR_CHART_BASE("bar","base");
 
-    private String type;
+    private final String type;
 
-    TypeOfChart(String type) {
+    private final String kindOfChart;
+
+
+    TypeOfChart(String type, String kindOfChart) {
         this.type = type;
+        this.kindOfChart = kindOfChart;
     }
 
 }

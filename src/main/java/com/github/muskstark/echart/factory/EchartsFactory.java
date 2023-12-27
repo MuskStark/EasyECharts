@@ -1,6 +1,7 @@
 package com.github.muskstark.echart.factory;
 
 
+import com.github.muskstark.echart.enums.TypeOfChart;
 import com.github.muskstark.echart.model.Charts;
 
 /**
@@ -8,6 +9,6 @@ import com.github.muskstark.echart.model.Charts;
  */
 public interface EchartsFactory {
 
-    Charts createChart();
+    Charts createChart(TypeOfChart chartType);
 
 }
