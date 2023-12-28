@@ -4,8 +4,10 @@ import com.github.muskstark.echart.style.asix.AxisPointer;
 import com.github.muskstark.echart.style.text.TextStyle;
 import lombok.Getter;
 
+import java.io.Serializable;
+
 @Getter
-public class ToolTip {
+public class ToolTip implements Serializable {
 
     private Boolean show;
     private String trigger;
