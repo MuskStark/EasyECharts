@@ -9,6 +9,7 @@ import com.github.muskstark.echart.attribute.axis.YAxis;
 import com.github.muskstark.echart.attribute.series.BarSeries;
 import com.github.muskstark.echart.enums.TypeOfChart;
 import com.github.muskstark.echart.model.Charts;
+import com.github.muskstark.echart.style.asix.AxisPointer;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -45,6 +46,18 @@ public class BarChar extends Charts {
             this.defineTitle().show(false);
             this.defineXAxis().type("category");
             this.defineYAxis().type("value");
+        }
+        if(Objects.equals(chartType.getKindOfChart(),TypeOfChart.BAR_CHART_AXIS_ALIGN_WITH_TICK.getKindOfChart())){
+            this.defineToolTip()
+                    .trigger("asix")
+                    .axisPointer(
+                            new AxisPointer()
+                                    .type("shadow")
+                    );
+            this.defineXAxis()
+                    .type("category");
+            this.defineYAxis()
+                    .type("value");
         }
     }
 
