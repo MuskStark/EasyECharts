@@ -16,18 +16,18 @@ public abstract class Series {
     private String name;
     private String type;
     private String colorBy;
-    private boolean legendHoverLink;
+    private Boolean legendHoverLink;
     private String coordinateSystem;
     private Integer xAxisIndex;
     private Integer yAxisIndex;
     private Integer polarIndex;
-    private boolean roundCap;
-    private boolean realtimeSort;
-    private boolean showBackground;
+    private Boolean roundCap;
+    private Boolean realtimeSort;
+    private Boolean showBackground;
     private BackgroundStyle backgroundStyle;
     private Label label;
-    private boolean clip;
-    private boolean large;
+    private Boolean clip;
+    private Boolean large;
     private Integer largeThreshold;
     private Integer progressive;
     private Integer progressiveThreshold ;
@@ -40,8 +40,8 @@ public abstract class Series {
     private List<Object> data;
     private Integer zLevel;
     private Integer z;
-    private boolean silent;
-    private boolean animation;
+    private Boolean silent;
+    private Boolean animation;
     private Integer animationThreshold;
     private Integer animationDuration;
     private String animationEasing;
@@ -79,7 +79,7 @@ public abstract class Series {
         return this;
     }
 
-    public Series legendHoverLink(boolean legendHoverLink) {
+    public Series legendHoverLink(Boolean legendHoverLink) {
         this.legendHoverLink = legendHoverLink;
         return this;
     }
@@ -104,17 +104,17 @@ public abstract class Series {
         return this;
     }
 
-    public Series roundCap(boolean roundCap) {
+    public Series roundCap(Boolean roundCap) {
         this.roundCap = roundCap;
         return this;
     }
 
-    public Series realtimeSort(boolean realtimeSort) {
+    public Series realtimeSort(Boolean realtimeSort) {
         this.realtimeSort = realtimeSort;
         return this;
     }
 
-    public Series showBackground(boolean showBackground) {
+    public Series showBackground(Boolean showBackground) {
         this.showBackground = showBackground;
         return this;
     }
@@ -129,12 +129,12 @@ public abstract class Series {
         return this;
     }
 
-    public Series clip(boolean clip) {
+    public Series clip(Boolean clip) {
         this.clip = clip;
         return this;
     }
 
-    public Series large(boolean large) {
+    public Series large(Boolean large) {
         this.large = large;
         return this;
     }

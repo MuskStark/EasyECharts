@@ -38,7 +38,11 @@ public class BarChar extends Charts {
         this.setYAxis(new YAxis());
         this.setSeries(new ArrayList<BarSeries>());
         this.addSeries(series);
+        if(Objects.equals(chartType.getKindOfChart(),TypeOfChart.BAR_CHART.getKindOfChart())){
+            this.defineTitle().show(false);
+        }
         if(Objects.equals(chartType.getKindOfChart(), TypeOfChart.BAR_CHART_BASE.getKindOfChart())) {
+            this.defineTitle().show(false);
             this.defineXAxis().type("category");
             this.defineYAxis().type("value");
         }
