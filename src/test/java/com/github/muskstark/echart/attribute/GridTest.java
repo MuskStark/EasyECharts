@@ -7,7 +7,9 @@ class GridTest {
     @Test
     void testException(){
         Grid test = new Grid();
-        test.left(1.0);
+        test.left("new GridTest()");
+        test.getLeft();
+        System.out.println(test.getLeft().getClass());
     }
 
 }
