@@ -8,6 +8,7 @@ import com.github.muskstark.echart.attribute.series.BarSeries;
 import com.github.muskstark.echart.enums.TypeOfBarChart;
 import com.github.muskstark.echart.model.bar.BarChar;
 import com.github.muskstark.echart.style.asix.AxisPointer;
+import com.github.muskstark.echart.style.background.BackgroundStyle;
 
 import java.util.ArrayList;
 
@@ -43,6 +44,17 @@ public abstract class BarChartFactory {
                 chart.defineYAxis()
                         .type("value");
 
+            }
+            case "background" -> {
+                chart = createBaseBarChart();
+                chart.defineTitle().show(false);
+                chart.defineXAxis().type("category");
+                chart.defineYAxis().type("value");
+                chart.defineDefaultSeries()
+                        .showBackground(true)
+                        .backgroundStyle(
+                                new BackgroundStyle()
+                                        .defineColor("rgba(180, 180, 180, 0.2)"));
             }
         }
         return chart;
