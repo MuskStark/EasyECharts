@@ -10,9 +10,10 @@ public enum TypeOfBarChart {
     /**
      * 基础类图表
      */
-    BAR_CHART(null),
-    BAR_CHART_BASE("base"),
-    BAR_CHART_AXIS_ALIGN_WITH_TICK("Axis Align with Tick") ;
+    BAR_CHART(null)
+    ,BAR_CHART_BASE("base")
+    ,BAR_CHART_AXIS_ALIGN_WITH_TICK("Axis Align with Tick")
+    ,BAR_CHART_WITH_BACKGROUND("background");
 
     private final String kindOfChart;
 
