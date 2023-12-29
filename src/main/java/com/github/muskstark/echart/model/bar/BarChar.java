@@ -7,15 +7,13 @@ import com.github.muskstark.echart.attribute.ToolTip;
 import com.github.muskstark.echart.attribute.axis.XAxis;
 import com.github.muskstark.echart.attribute.axis.YAxis;
 import com.github.muskstark.echart.attribute.series.BarSeries;
-import com.github.muskstark.echart.enums.TypeOfChart;
 import com.github.muskstark.echart.model.Charts;
-import com.github.muskstark.echart.style.asix.AxisPointer;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.Objects;
+
 
 
 @EqualsAndHashCode(callSuper = true)
@@ -29,37 +27,6 @@ public class BarChar extends Charts {
     private ToolTip toolTip;
     private List<BarSeries> series;
 
-    @Override
-    public void initialize(TypeOfChart chartType) {
-        // initialize bar
-        BarSeries series = new BarSeries();
-        series.type(chartType.getType());
-        this.setTitle(new Title());
-        this.setXAxis(new XAxis());
-        this.setYAxis(new YAxis());
-        this.setSeries(new ArrayList<BarSeries>());
-        this.addSeries(series);
-        if(Objects.equals(chartType.getKindOfChart(),TypeOfChart.BAR_CHART.getKindOfChart())){
-            this.defineTitle().show(false);
-        }
-        if(Objects.equals(chartType.getKindOfChart(), TypeOfChart.BAR_CHART_BASE.getKindOfChart())) {
-            this.defineTitle().show(false);
-            this.defineXAxis().type("category");
-            this.defineYAxis().type("value");
-        }
-        if(Objects.equals(chartType.getKindOfChart(),TypeOfChart.BAR_CHART_AXIS_ALIGN_WITH_TICK.getKindOfChart())){
-            this.defineToolTip()
-                    .trigger("asix")
-                    .axisPointer(
-                            new AxisPointer()
-                                    .type("shadow")
-                    );
-            this.defineXAxis()
-                    .type("category");
-            this.defineYAxis()
-                    .type("value");
-        }
-    }
 
     public Title defineTitle() {
         return this.getTitle();
