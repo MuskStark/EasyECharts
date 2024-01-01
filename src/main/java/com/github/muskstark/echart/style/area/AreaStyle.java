@@ -10,14 +10,14 @@ import java.io.Serializable;
  */
 @Data
 public class AreaStyle implements Serializable {
-        private Color color;
+        private String color;
         private Number shadowBlur;
-        private Color shadowColor;
+        private String shadowString;
         private Number shadowOffsetX;
         private Number shadowOffsetY;
         private Number opacity;
 
-        public AreaStyle color(Color color) {
+        public AreaStyle color(String color) {
                 this.color = color;
                 return this;
         }
@@ -27,8 +27,8 @@ public class AreaStyle implements Serializable {
                 return this;
         }
 
-        public AreaStyle shadowColor(Color shadowColor) {
-                this.shadowColor = shadowColor;
+        public AreaStyle shadowString(String shadowString) {
+                this.shadowString = shadowString;
                 return this;
         }
 

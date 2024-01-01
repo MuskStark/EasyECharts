@@ -11,7 +11,7 @@ import java.awt.*;
  */
 @Getter
 public class LineStyle {
-    private Color color;
+    private String color;
     private Number width;
     private String type;
     private Number dashOffset;
@@ -19,12 +19,12 @@ public class LineStyle {
     private String join;
     private Number miterLimit;
     private Number shadowBlur;
-    private Color shadowColor;
+    private String shadowString;
     private Number shadowOffsetX;
     private Number shadowOffsetY;
     private Number opacity;
 
-    public LineStyle color(Color color){
+    public LineStyle color(String color){
         this.color = color;
         return this;
     }
@@ -64,8 +64,8 @@ public class LineStyle {
         return this;
     }
 
-    public LineStyle shadowColor(Color shadowColor){
-        this.shadowColor = shadowColor;
+    public LineStyle shadowString(String shadowString){
+        this.shadowString = shadowString;
         return this;
     }
 

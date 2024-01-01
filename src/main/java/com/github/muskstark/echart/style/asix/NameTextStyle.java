@@ -13,7 +13,7 @@ import java.awt.*;
  */
 @Getter
 public class NameTextStyle {
-        private Color color;
+        private String color;
         private String fontStyle;
         private String fontWeight;
         private String fontFamily;
@@ -21,24 +21,24 @@ public class NameTextStyle {
         private String align;
         private String verticalAlign;
         private Number lineHeight;
-        private Object backgroundColor;
-        private Color borderColor;
+        private Object backgroundString;
+        private String borderString;
         private Number borderWidth;
         private Object borderType;
         private Number borderDashOffset;
         private Number[] borderRadius;
         private Number[] padding;
-        private Color shadowColor;
+        private String shadowString;
         private Number shadowBlur;
         private Number shadowOffsetX;
         private Number shadowOffsetY;
         private Number width;
         private Number height;
-        private Color textBorderColor;
+        private String textBorderString;
         private Number textBorderWidth;
         private Object textBorderType;
         private Number textBorderDashOffset;
-        private Color textShadowColor;
+        private String textShadowString;
         private Number textShadowBlur;
         private Number textShadowOffsetX;
         private Number textShadowOffsetY;
@@ -46,7 +46,7 @@ public class NameTextStyle {
         private String ellipsis;
         private Rich rich;
 
-        public NameTextStyle color(Color color) {
+        public NameTextStyle color(String color) {
                 this.color = color;
                 return this;
         }
@@ -79,12 +79,12 @@ public class NameTextStyle {
                 this.lineHeight = lineHeight;
                 return this;
         }
-        public NameTextStyle backgroundColor(Object backgroundColor) {
-                this.backgroundColor = backgroundColor;
+        public NameTextStyle backgroundString(Object backgroundString) {
+                this.backgroundString = backgroundString;
                 return this;
         }
-        public NameTextStyle borderColor(Color borderColor) {
-                this.borderColor = borderColor;
+        public NameTextStyle borderString(String borderString) {
+                this.borderString = borderString;
                 return this;
         }
         public NameTextStyle borderWidth(Number borderWidth) {
@@ -107,8 +107,8 @@ public class NameTextStyle {
                 this.padding = padding;
                 return this;
         }
-        public NameTextStyle shadowColor(Color shadowColor) {
-                this.shadowColor = shadowColor;
+        public NameTextStyle shadowString(String shadowString) {
+                this.shadowString = shadowString;
                 return this;
         }
         public NameTextStyle shadowBlur(Number shadowBlur) {
@@ -131,8 +131,8 @@ public class NameTextStyle {
                 this.height = height;
                 return this;
         }
-        public NameTextStyle textBorderColor(Color textBorderColor) {
-                this.textBorderColor = textBorderColor;
+        public NameTextStyle textBorderString(String textBorderString) {
+                this.textBorderString = textBorderString;
                 return this;
         }
         public NameTextStyle textBorderWidth(Number textBorderWidth) {
@@ -147,8 +147,8 @@ public class NameTextStyle {
                 this.textBorderDashOffset = textBorderDashOffset;
                 return this;
         }
-        public NameTextStyle textShadowColor(Color textShadowColor) {
-                this.textShadowColor = textShadowColor;
+        public NameTextStyle textShadowString(String textShadowString) {
+                this.textShadowString = textShadowString;
                 return this;
         }
         public NameTextStyle textShadowBlur(Number textShadowBlur) {
