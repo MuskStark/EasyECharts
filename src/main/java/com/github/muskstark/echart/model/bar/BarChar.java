@@ -2,6 +2,7 @@ package com.github.muskstark.echart.model.bar;
 
 
 import com.alibaba.fastjson2.annotation.JSONField;
+import com.github.muskstark.echart.attribute.Legend;
 import com.github.muskstark.echart.attribute.Title;
 import com.github.muskstark.echart.attribute.ToolTip;
 import com.github.muskstark.echart.attribute.axis.XAxis;
@@ -24,7 +25,6 @@ public class BarChar extends Charts {
     private XAxis xAxis;
     @JSONField(name = "yAxis")
     private YAxis yAxis;
-    private ToolTip toolTip;
     private List<BarSeries> series;
 
 
@@ -49,6 +49,10 @@ public class BarChar extends Charts {
 
     public BarSeries defineDefaultSeries() {
         return this.getSeries().get(0);
+    }
+
+    public Legend defineLegend() {
+        return this.getLegend();
     }
 
     public void addSeries(BarSeries series) {
