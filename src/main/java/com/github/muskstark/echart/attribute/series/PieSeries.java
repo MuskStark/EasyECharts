@@ -1,5 +1,6 @@
 package com.github.muskstark.echart.attribute.series;
 
+import com.github.muskstark.echart.attribute.Grid;
 import com.github.muskstark.echart.enums.EChartsExceptionsEnum;
 import com.github.muskstark.echart.exception.EChartsException;
 import lombok.Getter;
@@ -16,10 +17,19 @@ public class PieSeries {
     private String minAngle;
     private Boolean minShowLabelAngle;
     private Object roseType;
-    private Boolean avoidLabalOverlap;
+    private Boolean avoidLabelOverlap;
     private Boolean stillShowZeroSum;
     private Double percentPrecision;
     private String cursor;
+    private Object left;
+    private Object right;
+    private Object top;
+    private Object bottom;
+    private Object height;
+    private Object width;
+    private Boolean showEmptyCircle;
+
+
 
 
     public PieSeries geoIndex(Double geoIndex){
@@ -70,8 +80,8 @@ public class PieSeries {
         return this;
     }
 
-    public PieSeries avoidLabalOverlap(Boolean avoidLabalOverlap){
-        this.avoidLabalOverlap = avoidLabalOverlap;
+    public PieSeries avoidLabelOverlap(Boolean avoidLabelOverlap){
+        this.avoidLabelOverlap = avoidLabelOverlap;
         return this;
     }
 
@@ -90,6 +100,62 @@ public class PieSeries {
         return this;
     }
 
+    public PieSeries left(Object left) {
+        if(left instanceof String || left instanceof Double){
+            this.left = left;
+        }else {
+            throw new EChartsException(EChartsExceptionsEnum.ECharts_Invalid_TypeError);
+        }
+        return this;
+    }
 
+    public PieSeries right(Object right) {
+        if(right instanceof String || right instanceof Double){
+            this.right = right;
+        }else {
+            throw new EChartsException(EChartsExceptionsEnum.ECharts_Invalid_TypeError);
+        }
+        return this;
+    }
 
+    public PieSeries top(Object top){
+        if(top instanceof String || top instanceof Double){
+            this.top = top;
+        }else {
+            throw new EChartsException(EChartsExceptionsEnum.ECharts_Invalid_TypeError);
+        }
+        return this;
+    }
+
+    public PieSeries bottom(Object bottom){
+        if(bottom instanceof String || bottom instanceof Double){
+            this.bottom = bottom;
+        }else {
+            throw new EChartsException(EChartsExceptionsEnum.ECharts_Invalid_TypeError);
+        }
+        return this;
+    }
+
+    public PieSeries height(Object height){
+        if(height instanceof String || height instanceof Double){
+            this.height = height;
+        }else {
+            throw new EChartsException(EChartsExceptionsEnum.ECharts_Invalid_TypeError);
+        }
+        return this;
+    }
+
+    public PieSeries width(Object width) {
+        if(width instanceof String || width instanceof Double){
+            this.width = width;
+        }else {
+            throw new EChartsException(EChartsExceptionsEnum.ECharts_Invalid_TypeError);
+        }
+        return this;
+    }
+
+    public PieSeries showEmptyCircle(Boolean showEmptyCircle){
+        this.showEmptyCircle = showEmptyCircle;
+        return this;
+    }
 }
