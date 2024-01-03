@@ -19,7 +19,7 @@ import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BarChar extends Charts {
+public class BarChart extends Charts {
 
     @JSONField(name = "xAxis")
     private XAxis xAxis;
