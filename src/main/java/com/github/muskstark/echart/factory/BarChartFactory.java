@@ -1,12 +1,13 @@
 package com.github.muskstark.echart.factory;
 
 
+import com.github.muskstark.echart.attribute.Legend;
 import com.github.muskstark.echart.attribute.Title;
 import com.github.muskstark.echart.attribute.axis.XAxis;
 import com.github.muskstark.echart.attribute.axis.YAxis;
 import com.github.muskstark.echart.attribute.series.BarSeries;
-import com.github.muskstark.echart.enums.TypeOfBarChart;
-import com.github.muskstark.echart.model.bar.BarChar;
+import com.github.muskstark.echart.enums.StyleOfBarChart;
+import com.github.muskstark.echart.model.bar.BarChart;
 import com.github.muskstark.echart.style.asix.AxisPointer;
 import com.github.muskstark.echart.style.background.BackgroundStyle;
 
@@ -16,14 +17,18 @@ public abstract class BarChartFactory {
 
     private static final String TYPE = "bar";
 
-    public static BarChar createChart(TypeOfBarChart chartType) {
-        BarChar chart = null;
-        String kindOfChart = chartType.getKindOfChart();
-        if(kindOfChart == null){
+    public static BarChart createChart(){
+        return createBaseBarChart();
+    }
+
+    public static BarChart createChart(StyleOfBarChart chartStyle) {
+        BarChart chart = null;
+        String styleOfChart = chartStyle.getStyleOfChart();
+        if(styleOfChart == null){
             chart = createBaseBarChart();
             return chart;
         }
-        switch (kindOfChart) {
+        switch (styleOfChart) {
             case "base" -> {
                 chart = createBaseBarChart();
                 chart.defineTitle().show(false);
@@ -61,14 +66,15 @@ public abstract class BarChartFactory {
 
     }
 
-    private static BarChar createBaseBarChart(){
+    private static BarChart createBaseBarChart(){
 
-        BarChar chart = new BarChar();
+        BarChart chart = new BarChart();
         BarSeries series = new BarSeries();
         series.type(TYPE);
         chart.setTitle(new Title());
         chart.setXAxis(new XAxis());
         chart.setYAxis(new YAxis());
+        chart.setLegend(new Legend().show(false));
         chart.setSeries(new ArrayList<BarSeries>());
         chart.addSeries(series);
 
