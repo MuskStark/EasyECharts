@@ -6,7 +6,7 @@ import lombok.Getter;
  * 支持Chart种类
  */
 @Getter
-public enum TypeOfBarChart {
+public enum StyleOfBarChart {
     /**
      * 基础类图表
      */
@@ -15,11 +15,11 @@ public enum TypeOfBarChart {
     ,BAR_CHART_AXIS_ALIGN_WITH_TICK("Axis Align with Tick")
     ,BAR_CHART_WITH_BACKGROUND("background");
 
-    private final String kindOfChart;
+    private final String styleOfChart;
 
 
-    TypeOfBarChart(String kindOfChart) {
-        this.kindOfChart = kindOfChart;
+    StyleOfBarChart(String styleOfChart) {
+        this.styleOfChart = styleOfChart;
     }
 
 }
