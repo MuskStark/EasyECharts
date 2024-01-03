@@ -69,4 +69,19 @@ public class Legend {
     private Integer selectorItemGap;
     private Integer selectorButtonGap;
 
+    public Legend type(String type){
+        this.type = type;
+        return this;
+    }
+
+    public Legend id(String id){
+        this.id = id;
+        return this;
+    }
+
+    public Legend show(Boolean show){
+        this.show = show;
+        return this;
+    }
+
 }
