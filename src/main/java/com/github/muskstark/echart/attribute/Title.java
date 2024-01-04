@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Getter
 public class Title implements Serializable {
         private String id;
-        private boolean show;
+        private Boolean show;
         private String text;
         private String link;
         private String target;
@@ -23,30 +23,30 @@ public class Title implements Serializable {
         private TextStyle subtextStyle;
         private String textAlign;
         private String textVerticalAlign;
-        private boolean triggerEvent;
-        private int[] padding;
-        private int itemGap;
-        private int zLevel;
-        private int z;
+        private Boolean triggerEvent;
+        private Integer[] padding;
+        private Integer itemGap;
+        private Integer zLevel;
+        private Integer z;
         private String left;
         private String top;
         private String right;
         private String bottom;
         private String backgroundColor;
         private String borderColor;
-        private int borderWidth;
-        private int[] borderRadius;
-        private int shadowBlur;
+        private Integer borderWidth;
+        private Integer[] borderRadius;
+        private Integer shadowBlur;
         private String shadowColor;
-        private int shadowOffsetX;
-        private int shadowOffsetY;
+        private Integer shadowOffsetX;
+        private Integer shadowOffsetY;
 
         public Title id(String id){
             this.id = id;
             return this;
         }
 
-        public Title show(boolean show){
+        public Title show(Boolean show){
             this.show = show;
             return this;
         }
@@ -101,27 +101,27 @@ public class Title implements Serializable {
             return this;
         }
 
-        public Title triggerEvent(boolean triggerEvent){
+        public Title triggerEvent(Boolean triggerEvent){
             this.triggerEvent = triggerEvent;
             return this;
         }
 
-        public Title padding(int[] padding){
+        public Title padding(Integer[] padding){
             this.padding = padding;
             return this;
         }
 
-        public Title itemGap(int itemGap){
+        public Title itemGap(Integer itemGap){
             this.itemGap = itemGap;
             return this;
         }
 
-        public Title zLevel(int zLevel){
+        public Title zLevel(Integer zLevel){
             this.zLevel = zLevel;
             return this;
         }
 
-        public Title z(int z){
+        public Title z(Integer z){
             this.z = z;
             return this;
         }
@@ -156,17 +156,17 @@ public class Title implements Serializable {
             return this;
         }
 
-        public Title borderWidth(int borderWidth){
+        public Title borderWidth(Integer borderWidth){
             this.borderWidth = borderWidth;
             return this;
         }
 
-        public Title borderRadius(int[] borderRadius){
+        public Title borderRadius(Integer[] borderRadius){
             this.borderRadius = borderRadius;
             return this;
         }
 
-        public Title shadowBlur(int shadowBlur){
+        public Title shadowBlur(Integer shadowBlur){
             this.shadowBlur = shadowBlur;
             return this;
         }
@@ -176,12 +176,12 @@ public class Title implements Serializable {
             return this;
         }
 
-        public Title shadowOffsetX(int shadowOffsetX){
+        public Title shadowOffsetX(Integer shadowOffsetX){
             this.shadowOffsetX = shadowOffsetX;
             return this;
         }
 
-        public Title shadowOffsetY(int shadowOffsetY){
+        public Title shadowOffsetY(Integer shadowOffsetY){
             this.shadowOffsetY = shadowOffsetY;
             return this;
         }

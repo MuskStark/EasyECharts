@@ -14,12 +14,12 @@ public class BackgroundStyle {
     private String borderColor;
     private String borderWidth;
     private String  borderType;
-    private int[] borderRadius;
-    private int shadowBlur;
+    private Integer[] borderRadius;
+    private Integer shadowBlur;
     private Color shadowColor;
-    private int shadowOffsetX;
-    private int shadowOffsetY;
-    private int opacity;
+    private Integer shadowOffsetX;
+    private Integer shadowOffsetY;
+    private Integer opacity;
 
     public BackgroundStyle defineColor(String color) {
         this.color = color;
@@ -41,16 +41,16 @@ public class BackgroundStyle {
         return this;
     }
 
-    public BackgroundStyle defineBorderRadius(int leftUp, int rightUp, int rightDown, int leftDown) {
-        this.borderRadius = new int[]{leftUp, rightUp, rightDown, leftDown};
+    public BackgroundStyle defineBorderRadius(Integer leftUp, Integer rightUp, Integer rightDown, Integer leftDown) {
+        this.borderRadius = new Integer[]{leftUp, rightUp, rightDown, leftDown};
         return this;
     }
-    public BackgroundStyle defineBorderRadius(int allRadius) {
-        this.borderRadius = new int[]{allRadius, allRadius, allRadius, allRadius};
+    public BackgroundStyle defineBorderRadius(Integer allRadius) {
+        this.borderRadius = new Integer[]{allRadius, allRadius, allRadius, allRadius};
         return this;
     }
 
-    public BackgroundStyle defineShadowBlur(int shadowBlur) {
+    public BackgroundStyle defineShadowBlur(Integer shadowBlur) {
         this.shadowBlur = shadowBlur;
         return this;
     }
@@ -60,17 +60,17 @@ public class BackgroundStyle {
         return this;
     }
 
-    public BackgroundStyle defineShadowOffsetX(int shadowOffsetX) {
+    public BackgroundStyle defineShadowOffsetX(Integer shadowOffsetX) {
         this.shadowOffsetX = shadowOffsetX;
         return this;
     }
 
-    public BackgroundStyle defineShadowOffsetY(int shadowOffsetY) {
+    public BackgroundStyle defineShadowOffsetY(Integer shadowOffsetY) {
         this.shadowOffsetY = shadowOffsetY;
         return this;
     }
 
-    public BackgroundStyle defineOpacity(int opacity) {
+    public BackgroundStyle defineOpacity(Integer opacity) {
         this.opacity = opacity;
         return this;
     }

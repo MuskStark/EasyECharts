@@ -40,3 +40,4 @@ build/
 /.idea/vcs.xml
 /.idea/aws.xml
 /settings.xml
+/.idea/uiDesigner.xml

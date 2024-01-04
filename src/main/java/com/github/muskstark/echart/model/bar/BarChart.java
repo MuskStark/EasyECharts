@@ -2,23 +2,24 @@ package com.github.muskstark.echart.model.bar;
 
 
 import com.alibaba.fastjson2.annotation.JSONField;
+import com.github.muskstark.echart.attribute.Legend;
 import com.github.muskstark.echart.attribute.Title;
+import com.github.muskstark.echart.attribute.ToolTip;
 import com.github.muskstark.echart.attribute.axis.XAxis;
 import com.github.muskstark.echart.attribute.axis.YAxis;
 import com.github.muskstark.echart.attribute.series.BarSeries;
-import com.github.muskstark.echart.enums.TypeOfChart;
 import com.github.muskstark.echart.model.Charts;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.Objects;
+
 
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BarChar extends Charts {
+public class BarChart extends Charts {
 
     @JSONField(name = "xAxis")
     private XAxis xAxis;
@@ -26,39 +27,32 @@ public class BarChar extends Charts {
     private YAxis yAxis;
     private List<BarSeries> series;
 
-    @Override
-    public void initialize(TypeOfChart chartType) {
-        // initialize bar
-        Title title = new Title();
-        XAxis xAxis = new XAxis();
-        YAxis yAxis = new YAxis();
-        BarSeries series = new BarSeries();
-        this.setTitle(title);
-        this.setXAxis(xAxis);
-        this.setYAxis(yAxis);
-        this.setSeries(new ArrayList<BarSeries>());
-        series.type(chartType.getType());
-        this.addSeries(series);
-        if(Objects.equals(chartType.getKindOfChart(), TypeOfChart.BAR_CHART_BASE.getKindOfChart())) {
-            this.defineXAxis().type("category");
-            this.defineYAxis().type("value");
-        }
-    }
 
     public Title defineTitle() {
         return this.getTitle();
     }
 
     public XAxis defineXAxis() {
-        return this.xAxis;
+        return this.getXAxis();
     }
 
     public YAxis defineYAxis() {
-        return this.yAxis;
+        return this.getYAxis();
+    }
+
+    public ToolTip defineToolTip() {
+        if (this.getToolTip() == null) {
+            this.setToolTip(new ToolTip());
+        }
+        return this.getToolTip();
     }
 
     public BarSeries defineDefaultSeries() {
         return this.getSeries().get(0);
+    }
+
+    public Legend defineLegend() {
+        return this.getLegend();
     }
 
     public void addSeries(BarSeries series) {
