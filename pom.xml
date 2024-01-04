@@ -6,7 +6,7 @@
 
     <groupId>io.github.muskstark</groupId>
     <artifactId>easyecharts</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <url>https://github.com/MuskStark/EasyECharts</url>
     <name>EasyECharts</name>
     <description>A Java Tool For ECharts</description>
