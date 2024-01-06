@@ -5,6 +5,9 @@ import com.github.muskstark.echart.factory.BarChartFactory;
 import com.github.muskstark.echart.util.EchartsUtil;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 class BarChartTest {
 
@@ -40,6 +43,10 @@ class BarChartTest {
         chart.defineTitle().show(true);
         chart.defineToolTip().extraCssText("test");
         chart.defineLegend().type("legend");
+        List<Long> seriesData = new ArrayList<Long>();
+        seriesData.add(1l);
+        seriesData.add(2l);
+        chart.defineDefaultSeries().data(seriesData);
         System.out.println(EchartsUtil.toJson(chart));
     }
 

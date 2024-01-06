@@ -37,7 +37,7 @@ public abstract class Series {
     private String seriesLayoutBy;
     private Integer datasetIndex;
     private String dataGroupId;
-    private List<Object> data;
+    private List<?> data;
     private Integer zLevel;
     private Integer z;
     private Boolean silent;
@@ -164,7 +164,7 @@ public abstract class Series {
         return this;
     }
 
-    public Series data(List<Object> data) {
+    public Series data(List<?> data) {
         this.data = data;
         return this;
     }
